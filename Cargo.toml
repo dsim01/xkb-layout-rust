@@ -1,0 +1,18 @@
+[package]
+name = "xkb-layout-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+x11rb = { version = "0.14.0", features = ["xkb"] }
+
+[[bin]]
+name = "xkb-layout"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"
